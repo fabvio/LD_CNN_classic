@@ -5,10 +5,11 @@ Lane detection with a classical and with a deep learning based approach for Comp
 
 1) Load the KITTI odometry01 directory in greyscale and visualize it
 2) Obtain a IPM image applying the homography matrix given
-3) Process the IPM with a DLD kernel:
-<p align="center">
-  <img src="DLD.gif">
-</p>
+3) Process the IPM with a DLD kernel
 4) Binarize the obtained image with a fixed threshold
 5) Binarize the obtained image with an adaptive threshold
 6) Cluster the points together. A point belongs to a cluster if it is near (NxN) to a point in that cluster.
+
+<p align="center">
+  <img src="DLD.gif">
+</p>
