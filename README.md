@@ -8,5 +8,5 @@ Lane detection with a classical and with a deep learning based approach for Comp
 3) Process the IPM with a DLD kernel:
 
 4) Binarize the obtained image with a fixed threshold
-5) Binarize the obtained image with ad adaptive threshold
+5) Binarize the obtained image with an adaptive threshold
 6) Cluster the points together. A point belongs to a cluster if it is near (NxN) to a point in that cluster.
