@@ -47,3 +47,4 @@ Lane detection with a classical and with a deep learning based approach for Comp
 1) libprotobuf not found when compiling Lane_CNN: `sudo apt-get install libprotobuf-dev`
 2) Issues with `imshow`: try to manually download and compile OpenCV
 3) Other issues with libtorch: manually download libtorch and link it with `cmake -DCMAKE_PREFIX_PATH=path/to/libtorch ..` 
+4) Issues with libmklml: download it from the repo and place it in `libtorch/lib`
