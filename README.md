@@ -27,7 +27,7 @@ Lane detection with a classical and with a deep learning based approach for Comp
 ## Tasks for Ex. 2
 
 1) Load the CNN using `std::shared_ptr<torch::jit::script::Module> module = torch::jit::load("../res/model_cpp.cnn");`
-2) Read the images in the 0531 folder
+2) Read the images in the 0531 folder in `READ_COLOR` mode
 3) Resize the images (512x256) with `cv::resize(scr_im, dst_im, cv::Size(w, h));`
 4) Convert the images using `tc.toTensor(image)` initializing an object `tc = TConverter();`
 5) Create a`std::vector` of `torch::jit::IValue` and `push_back` the Tensor 
