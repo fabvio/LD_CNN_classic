@@ -34,14 +34,19 @@ at::Tensor TConverter::toTensor(cv::Mat& image)
 /*! Converts a tensor to an image
 * Addtitional control is given over the number of channels. It requires to know the resulting image size.
 */
+
 cv::Mat TConverter::toImage(at::Tensor& tensor, TConverter::mode_convert mode, cv::Size sizes)
 {
+  cv::Mat image;
   if(mode == TConverter::CONVERT_COLOR){
-    cv::Mat image(sizes, CV_8UC3, tensor.data_ptr()); 
+    image = cv::Mat(sizes, CV_8UC3, tensor.data_ptr()); 
   }
   else if(mode == TConverter::CONVERT_GRAYSCALE){
-    cv::Mat image(sizes, CV_8UC1, tensor.data_ptr()); 
+    image = cv::Mat(sizes, CV_8UC1, tensor.data_ptr()); 
   }
+  return image;
 }
+
+
 
 
