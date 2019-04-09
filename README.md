@@ -7,9 +7,42 @@ Lane detection with a classical and with a deep learning based approach for Comp
 2) Obtain a IPM image applying the homography matrix given
 3) Process the IPM with a DLD kernel
 4) Binarize the obtained image with a fixed threshold
-5) Binarize the obtained image with an adaptive threshold
+5) Binarize the obtained image with an adaptive threshold: `LANE(x,y) = (DLD(x,y) > alpha*AVG(x,y)) ? 255 : 0`
 6) Cluster the points together. A point belongs to a cluster if it is near (NxN) to a point in that cluster.
 7) Bonus: fitting with Hough Transform
 <p align="center">
   <img src="DLD.gif">
 </p>
+
+### Hints for the clustering algorithm
+1) Start from the bottom of the binarized image and proceed
+2) Use cv::Point2d
+3) Visualize the clusters with random colors using `rand()`
+
+### Hints for Hough Transform
+1) Move your reference system from `(0,0)` to `(ipm_w / 2, ipm_h / 2)`
+2) The conversion between the cartesian and polar space is `r = cos(t) * (x - x_center) + sin(t) * (y - y_center)`
+3) Pay attention to degrees and radiants!
+
+## Tasks for Ex. 2
+
+1) Load the CNN using `std::shared_ptr<torch::jit::script::Module> module = torch::jit::load("../res/model_cpp.cnn");`
+2) Read the images in the 0531 folder
+3) Resize the images (512x256)
+4) Convert the images using `toTensor(image)`
+5) Create a`std::vector` of `torch::jit::IValue` and `push_back` the Tensor image
+6) Forward the array inside the neural network
+7) Get the output with       
+      ```
+      std::tuple<at::Tensor, at::Tensor> output_max = at::max(output, 1);
+      at::Tensor argmax = std::get<1>(output_max);
+      argmax = argmax.to(at::kByte);
+      ```
+8) Visualize the different lanes with different colors. Get the image with `toImage`
+
+<hr>
+
+## Possible issues
+
+1) libprotobuf not found when compiling Lane_CNN: `sudo apt-get install libprotobuf-dev`
+2) Issues with `imshow`: try to manually download and compile OpenCV
