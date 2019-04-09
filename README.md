@@ -38,7 +38,7 @@ Lane detection with a classical and with a deep learning based approach for Comp
       at::Tensor argmax = std::get<1>(output_max);
       argmax = argmax.to(at::kByte);
       ```
-8) Visualize the different lanes with different colors. Get the image with `toImage`
+8) Visualize the different lanes with different colors. Get the prediction image with `cv::Mat prediction_vectors = tc.toImage(argmax, TConverter::CONVERT_GRAYSCALE, image.size());`. You will get a matrix where 0=background, 1/2/3/4 = different lanes.
 
 <hr>
 
@@ -46,3 +46,4 @@ Lane detection with a classical and with a deep learning based approach for Comp
 
 1) libprotobuf not found when compiling Lane_CNN: `sudo apt-get install libprotobuf-dev`
 2) Issues with `imshow`: try to manually download and compile OpenCV
+3) Other issues with libtorch: manually download libtorch and link it with `cmake -DCMAKE_MODULE_PATH=path/to/libtorch ..` 
