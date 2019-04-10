@@ -20,8 +20,7 @@ Lane detection with a classical and with a deep learning based approach for Comp
 3) Visualize the clusters with random colors using `rand()` or color palette
 
 ### Hints for Hough Transform
-1) Move your reference system from `(0,0)` to `(ipm_w / 2, ipm_h / 2)`
-2) The conversion between the cartesian and polar space is `r = cos(t) * (x - x_center) + sin(t) * (y - y_center)`
+2) The conversion between the cartesian and polar space is `r = cos(t) * (x) + sin(t) * (y)`
 3) Pay attention to degrees and radiants!
 
 ## Tasks for Ex. 2
