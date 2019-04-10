@@ -17,7 +17,7 @@ Lane detection with a classical and with a deep learning based approach for Comp
 ### Hints for the clustering algorithm
 1) Start from the bottom of the binarized image and proceed
 2) Use `cv::Point2d` if you want `std::vector< std::vector <cv::Point2d> >`
-3) Visualize the clusters with random colors using `rand()`
+3) Visualize the clusters with random colors using `rand()` or color palette
 
 ### Hints for Hough Transform
 1) Move your reference system from `(0,0)` to `(ipm_w / 2, ipm_h / 2)`
