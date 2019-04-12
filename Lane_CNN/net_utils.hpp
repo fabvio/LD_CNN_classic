@@ -9,7 +9,7 @@ public:
     CONVERT_GRAYSCALE
   };
   TConverter();
-  at::Tensor toTensor(cv::Mat& image);
+  at::Tensor toTensor(cv::Mat image);
   cv::Mat toImage(torch::Tensor& tensor, TConverter::mode_convert, cv::Size sizes);
 };
 
@@ -19,7 +19,7 @@ TConverter::TConverter(){}
 * It is supposed that the image is in format D1xD2xC
 * The output tensor will be BxCxD1xD2 
 */
-at::Tensor TConverter::toTensor(cv::Mat& image)
+at::Tensor TConverter::toTensor(cv::Mat image)
 {
   cv::cvtColor(image, image, cv::COLOR_BGR2RGB);
   at::Tensor tensor_image = torch::from_blob(image.data, {image.rows, image.cols, 3}, at::kByte); 
@@ -50,3 +50,7 @@ cv::Mat TConverter::toImage(at::Tensor& tensor, TConverter::mode_convert mode, c
 
 
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
