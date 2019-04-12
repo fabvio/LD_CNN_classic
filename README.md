@@ -13,7 +13,6 @@ Lane detection with a classical and with a deep learning based approach for Comp
 <p align="center">
   <img src="DLD.gif">
 </p>
-<<<<<<< Updated upstream
 
 ### Hints for the clustering algorithm
 1) Start from the bottom of the binarized image and proceed
@@ -48,5 +47,3 @@ Lane detection with a classical and with a deep learning based approach for Comp
 2) Issues with `imshow`: try to manually download and compile OpenCV
 3) Other issues with libtorch: manually download libtorch and link it with `cmake -DCMAKE_PREFIX_PATH=path/to/libtorch ..` 
 4) Issues with libmklml: download it from the repo and place it in `libtorch/lib`
-=======
->>>>>>> Stashed changes
