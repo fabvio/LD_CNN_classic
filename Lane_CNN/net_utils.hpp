@@ -47,10 +47,3 @@ cv::Mat TConverter::toImage(at::Tensor& tensor, TConverter::mode_convert mode, c
   return image;
 }
 
-
-
-
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
